@@ -1,0 +1,60 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sprint Zero — QA Job Simulator</title><link rel="stylesheet" href="/styles.css"></head><body>
+
+<div id="onboarding" class="onboarding">
+  <section id="onboardingName" class="onboarding-screen active-onboarding">
+    <div class="onboarding-brand"><div class="brand">SPRINT ZERO</div><div class="subbrand">QA Job Simulator</div></div>
+    <div class="onboarding-quote">“Grandes QAs não apenas encontram bugs,<br>eles ajudam a construir produtos melhores.”</div>
+    <div class="welcome-card">
+      <div class="welcome-icon">🎁</div>
+      <span class="eyebrow">Sua jornada começa aqui</span>
+      <h1>Obrigado por adquirir o<br><strong>QA Job Simulator!</strong></h1>
+      <p>Estamos felizes em ter você aqui. Antes de começar sua primeira sprint, queremos saber como chamar você.</p>
+      <form id="nameForm" class="name-form">
+        <label for="studentName">Qual é o seu nome?</label>
+        <div class="name-input-wrap"><span>👤</span><input id="studentName" name="studentName" autocomplete="name" maxlength="40" placeholder="Digite seu nome aqui..." required></div>
+        <label for="studentEmail">E-mail usado na compra</label>
+        <div class="name-input-wrap"><span>✉</span><input id="studentEmail" name="studentEmail" type="email" autocomplete="email" placeholder="voce@email.com" required></div>
+        <label for="accessCode">Código de acesso</label>
+        <div class="name-input-wrap"><span>🔐</span><input id="accessCode" name="accessCode" autocomplete="one-time-code" placeholder="Código recebido após a compra" required></div>
+        <button class="primary onboarding-button" type="submit">VALIDAR E ENTRAR <span>→</span></button>
+        <div id="nameError" class="name-error"></div>
+      </form>
+      <blockquote>“Toda grande jornada começa com um primeiro teste.”<small>— Sprint Zero</small></blockquote>
+    </div>
+  </section>
+
+  <section id="onboardingWelcome" class="onboarding-screen">
+    <div class="onboarding-brand"><div class="brand">SPRINT ZERO</div><div class="subbrand">QA Job Simulator</div></div>
+    <div class="personal-welcome">
+      <div class="wave">👋</div>
+      <p class="welcome-kicker">Seja bem-vindo,</p>
+      <h1 id="welcomeName">QA!</h1>
+      <p class="welcome-copy">Pronto para colocar suas habilidades de QA em prática e viver o dia a dia de um profissional de qualidade?</p>
+      <div class="welcome-features">
+        <div><span>◎</span><strong>Encontre</strong><small>os bugs</small></div>
+        <div><span>▥</span><strong>Teste</strong><small>funcionalidades</small></div>
+        <div><span>✓</span><strong>Valide</strong><small>correções</small></div>
+        <div><span>🏆</span><strong>Evolua</strong><small>sua carreira</small></div>
+      </div>
+      <button id="startExperienceBtn" class="primary onboarding-button">VAMOS COMEÇAR <span>→</span></button>
+      <blockquote>“Qualidade não acontece por acaso,<br>acontece por pessoas como você.”<small>— Sprint Zero</small></blockquote>
+    </div>
+  </section>
+</div>
+
+<div id="appShell" class="shell app-hidden"><aside class="sidebar"><div><div class="brand">SPRINT ZERO</div><div class="subbrand">QA Job Simulator</div></div>
+<div class="timer-box"><small>TEMPO DA US</small><strong id="timer">10:00</strong><span id="timerState">não iniciado</span></div>
+<nav><button class="nav active" data-view="dashboard">Dashboard</button><button class="nav" data-view="stories">Histórias / US</button><button class="nav" data-view="story">US selecionada</button><button class="nav" data-view="lab">Ambiente de Teste</button><button class="nav" data-view="report">Registrar Bug</button><button class="nav" data-view="results">Resultado</button><button class="nav answer-nav" data-view="answers">Gabarito QA <span id="answerLock">🔒</span></button><button class="nav" data-view="conclusion">Conclusão</button><button class="nav" data-view="profile">Meu Perfil</button></nav>
+<div class="sidebar-user"><div class="user-avatar" id="sidebarAvatar">Q</div><div><strong id="sidebarName">QA</strong><small>QA em treinamento</small></div></div><div class="sidebar-footer">NexaShop Engineering Portal<br><span>HOTMART MVP 1.0</span></div></aside><main>
+<section id="dashboard" class="view active-view"><div class="dashboard-welcome"><div><span class="eyebrow">QUALITY ENGINEERING</span><h2>Olá, <span id="dashboardName">QA</span>!</h2><p>Aqui é o seu ambiente de simulação. Sua Sprint 24 está pronta para começar.</p></div><span class="status-dot dashboard-status">● Sprint 24 ativa</span></div><div class="hero dashboard-hero"><p class="eyebrow">Simulação prática</p><h1>11 histórias. Bugs escondidos.<br>Você é o QA.</h1><p>Escolha uma User Story, leia os critérios de aceite e encontre todos os defeitos obrigatórios antes de o cronômetro de 10 minutos terminar.</p><button class="primary" data-go="stories">VER HISTÓRIAS DISPONÍVEIS →</button></div><div class="grid-3"><div class="card metric"><span>Histórias em QA</span><strong>11</strong><small>nível básico</small></div><div class="card metric"><span>Bugs reportados</span><strong id="metricBugs">0</strong><small>nesta sessão</small></div><div class="card metric"><span>US aprovadas</span><strong id="metricPassed">0</strong><small>de 11</small></div></div></section>
+<section id="stories" class="view"><div class="topline"><span>BACKLOG / READY FOR QA</span><span>Selecione uma história</span></div><div id="storyGrid" class="story-grid"></div></section>
+<section id="story" class="view"><div class="topline"><span id="storyJira">JIRA</span><span class="pill high">BÁSICO</span></div><div class="card ticket"><div class="ticket-head"><div><span id="storyId" class="eyebrow"></span><h2 id="storyTitle"></h2></div><span class="pill ready">READY FOR QA</span></div><p id="storyDesc"></p><h3>Critérios de aceite</h3><ul id="storyCriteria" class="criteria"></ul><div class="meta"><span>Desenvolvedor: Lucas Martins</span><span>PO: Mariana Costa</span><span>Tempo: 10 minutos</span></div><button id="openLabBtn" class="primary">INICIAR SIMULAÇÃO DESTA US</button></div></section>
+<section id="lab" class="view"><div class="topline"><span id="labLabel">STAGING</span><span class="status-dot">● online</span></div><div class="lab-layout"><div class="app-window"><div class="app-bar"><span id="labUrl">nexashop.com/staging</span><span>QA ENV</span></div><div id="labContent" class="generic-lab"></div></div><div class="card instructions"><span class="eyebrow">Sua missão</span><h3 id="missionTitle"></h3><p>Teste caminho feliz, inválidos, limites e comportamento da interface. O cronômetro começou quando você abriu este ambiente.</p><p class="hint">Esta US possui <strong>3 bugs obrigatórios</strong>.</p><div id="labProgress" class="mini-progress">0 / 3 encontrados</div><button class="secondary" data-go="report">REPORTAR UM BUG</button></div></div></section>
+<section id="report" class="view"><div class="topline"><span>BUG REPORT</span><span id="reportStoryLabel"></span></div><div class="card form-card"><h2>Registrar defeito</h2><form id="bugForm"><input type="hidden" name="storyId" id="reportStoryId"><label>Título *</label><input name="title" required placeholder="Ex.: Campo aceita valor inválido"><label>Passos para reproduzir *</label><textarea name="steps" required placeholder="1. Acessar...&#10;2. Informar...&#10;3. Clicar..."></textarea><label>Resultado atual *</label><textarea name="actual" required></textarea><label>Resultado esperado *</label><textarea name="expected" required></textarea><div class="form-row"><div><label>Severidade *</label><select name="severity" required><option value="">Selecione</option><option>Baixa</option><option>Média</option><option>Alta</option><option>Crítica</option></select></div><div><label>Prioridade</label><select name="priority"><option>Baixa</option><option selected>Média</option><option>Alta</option><option>Urgente</option></select></div></div><label>Evidência</label><input name="evidence" placeholder="Descrição/URL da evidência"><label>Observações</label><textarea name="observations" placeholder="Contexto adicional, navegador, dispositivo etc."></textarea><button class="primary" type="submit">SALVAR BUG</button><span id="saveMsg"></span></form></div></section>
+<section id="results" class="view"><div class="topline"><span>QA PERFORMANCE</span><button id="resetBtn" class="danger-link">reiniciar sessão</button></div><div id="simulationBanner" class="simulation-banner neutral"><strong>Selecione uma US para iniciar.</strong><span>Você terá 10 minutos para encontrar os 3 bugs obrigatórios.</span></div><div class="grid-3"><div class="card metric"><span>Score</span><strong id="scoreValue">0</strong><small id="scoreMax">/ 330</small></div><div class="card metric"><span>Defeitos únicos</span><strong id="foundCount">0</strong><small>/ 33</small></div><div class="card metric"><span>US aprovadas</span><strong id="passedCount">0</strong><small>/ 11</small></div></div><div class="card result-list-card"><div class="ticket-head"><h3>Defeitos reportados</h3><span id="currentProgress" class="pill ready"></span></div><div id="bugList" class="bug-list"></div></div></section>
+<section id="answers" class="view"><div class="topline"><span>GABARITO QA</span><span class="pill high">PÓS-SIMULAÇÃO</span></div><div id="answerGate" class="card answer-warning"><strong>Área de respostas protegida</strong><p>O gabarito de uma US só é liberado depois que a simulação daquela história for concluída ou o tempo terminar.</p></div><div id="answerList" class="answer-list"></div></section>
+<section id="conclusion" class="view"><div class="topline"><span>CONCLUSÃO</span><span>QA JOB SIMULATOR</span></div><div class="card completion-card"><span class="eyebrow">SPRINT ZERO</span><h1 id="completionTitle">Sua jornada está em andamento.</h1><p id="completionCopy">Conclua as 11 histórias para liberar sua tela final de desempenho.</p><div class="completion-progress"><div id="completionBar"></div></div><strong id="completionPct">0%</strong><div id="completionStats" class="grid-3"></div><div id="certificateArea" class="certificate-area"></div></div></section>
+<section id="profile" class="view"><div class="topline"><span>MEU PERFIL</span><span>QA JOB SIMULATOR</span></div><div class="profile-card card"><div class="profile-avatar" id="profileAvatar">Q</div><div><span class="eyebrow">QA em treinamento</span><h2 id="profileName">QA</h2><p>Seu progresso fica vinculado ao e-mail informado no acesso. Continue explorando histórias, reportando bugs e validando correções.</p><small id="profileEmail"></small></div></div><div class="card profile-actions"><h3>Personalização</h3><p>Quer iniciar a experiência com outro nome ou mostrar novamente as boas-vindas?</p><button id="restartOnboardingBtn" class="secondary-action">REFAZER BOAS-VINDAS</button></div></section>
+</main></div>
+<div id="bugModal" class="modal" aria-hidden="true"><div class="modal-backdrop" data-close-modal></div><div class="modal-panel"><div class="modal-head"><div><span class="eyebrow">BUG REPORT</span><h2>Detalhes do defeito</h2></div><button id="closeBugModal" class="icon-btn">×</button></div><div id="bugModalBody"></div></div></div>
+<script src="/app.js"></script></body></html>
