@@ -57,3 +57,4 @@ Compra aprovada → aluno recebe e-mail/código → acessa o QA Job Simulator �
 ## Novidade 1.1 — edição após reteste
 
 Após executar o primeiro reteste de um bug, o detalhe passa a permitir edição de título, severidade, prioridade, passos, resultado atual, resultado esperado, evidência e observações. Ao salvar, o report é reaberto, a identificação do defeito é recalculada e uma nova entrada é criada na timeline. Também foram adicionadas exclusão individual do bug e visual de status/tentativas de reteste.
+# qa-job-simulator
